@@ -1,0 +1,17 @@
+/* Reset */
+@import url(reset.css);
+
+/* Estilos padrão */
+@import url(fonts.css);
+@import url(default.css);
+@import url(forms.css);
+@import url(buttons.css);
+
+/* Estilo geral do site */
+@import url(style.css);
+
+/* Página não encontrada */
+@import url(404.css);
+
+/* Media Queries */
+@import url(media_queries.css);

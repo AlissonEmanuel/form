@@ -1,0 +1,34 @@
+.button {
+	background: none;
+	transition: background-color ease 1s;
+	display: inline-block;
+    padding: 0 1.5em;
+    height: 3em;
+    line-height: 3em;
+	font-weight: 700;
+	text-decoration: none;
+    color: rgb(255, 255, 255);
+	border: 0;
+    border-radius: 1.5em;
+	cursor: pointer;
+}
+
+.button-blue {
+	background: rgba(91, 192, 190, 0.8);
+}
+
+.button-blue:hover {
+	background: rgba(91, 192, 190, 1);
+}
+
+.button-blue-dark {
+	background: rgba(28, 37, 65, 0.8);
+}
+
+.button-blue-dark:hover {
+	background: rgba(28, 37, 65, 1);
+}
+
+.button-green {}
+
+.button-green:hover {}

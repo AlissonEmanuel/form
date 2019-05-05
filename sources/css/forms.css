@@ -1,0 +1,151 @@
+/* Inputs Resets */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=file], select {
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+}
+
+input[type=file] {
+    top: 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+}
+
+/* Form containers */
+.formContainerNormal {
+    width: 100%;
+}
+
+/* Forms */
+form {
+    width: 100%;
+}
+
+/* Div Itens */
+.divItem {
+    background: rgb(255, 255, 255);
+    position: relative;
+    margin-bottom: 1.1em;
+    width: 100%;
+    height: 3em;
+    border-radius: 0.150em;
+    float: left;
+    z-index: 1;
+}
+
+.divItemTextArea {
+    height: 6em;
+}
+
+.divItemSubmit {
+	background: none;
+    margin-bottom: 0;
+    border: 0;
+}
+
+.inputSubmit {
+	padding: 0;
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 1.5em;
+}
+
+/* Inputs, Selects, Textareas, Buttons */
+input, select, textarea, button {
+    background: none;
+    position: absolute;
+    padding: 0.6em 0.7em 0;
+    width: 100%;
+    height: 100%;
+    line-height: 2.8em;
+    color: rgb(28, 37, 65);
+    outline: none;
+    border: 0;
+    border-radius: 0.150em;
+    box-shadow: none;
+    z-index: 1;
+}
+
+textarea {
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    height: 100%;
+    line-height: 1em;
+    resize: none;
+}
+
+
+/* Labels */
+label {
+    position: absolute;
+    top: 0;
+    padding: 0 0.8em;
+    width: 100%;
+    height: 100%;
+    line-height: 2.8em;
+    color: #cccccc; /* Cinza claro */
+    font-weight: 700;
+    cursor: text;
+    z-index: 1;
+}
+
+label.labelTextCenter {
+    width: 100%;
+    text-align: center;
+}
+
+/* Spans */
+.labelValidateJsOk, .labelValidateJsError {
+    display: none;
+}
+
+.labelValidateJsOk {
+	color: #009c41; /* Verde */
+}
+
+.labelValidateJsError {
+	color: #E74C3C; /* Vermelho */
+}
+
+.spanErrorDescription {
+    display: none;
+    position: absolute;
+    bottom: -1.6em;
+    left: 0;
+    padding: 0 0.8em;
+    height: 1.7em;
+    line-height: 1.7em;
+    font-size: 0.6em;
+    font-weight: 400;
+    color: #E74C3C;
+    cursor: text;
+}
+
+.symbolValidateJsOk, .symbolValidateJsError {
+    margin-left: 0.5em;
+}
+
+.symbolValidateJsOk {
+    color: #009c41; /* Verde */
+}
+
+.symbolValidateJsError {
+    color: #E74C3C; /* Vermelho */
+}
