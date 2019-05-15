@@ -25,6 +25,8 @@ $(function(){
         var spanErrorDescription = $(this).parent().children('.span-error-description');
 
         if (formItem.val() != '') {
+            formItem.removeClass('focus');
+            
             formItem.addClass('validate-ok');
             label.addClass('validate-ok');
             spanErrorDescription.hide();
