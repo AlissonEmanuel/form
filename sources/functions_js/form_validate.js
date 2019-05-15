@@ -3,101 +3,60 @@ $(function(){
     //$('.formItem').val('');
 
     // Quando o input estiver ativo (Focus)
-    $('.formItem').on("focus", function(){
-        var divItem = $(this).parent();
-        var inputIcon = $(this).parent().children('.spanInputIcon');
+    $('.form-item').on("focus", function(){
         var formItem = $(this);
-        var label = $(this).parent().children('label:not(.labelFileNameFile)');
-        var labelText = $(this).parent().children('.labelText');
-        var labelValidateOk = $(this).parent().children('.labelValidateJsOk');
-        var labelValidateError = $(this).parent().children('.labelValidateJsError');
-        var spanErrorDescription = $(this).parent().children('.spanErrorDescription');
-        var id = this.id; // Como se pega o id
+        var label = $(this).parent().children('label');
+        var spanErrorDescription = $(this).parent().children('.span-error-description');
         
-        divItem.css({'border':'0.050em solid #AED6F1'}); // Azul
-        inputIcon.css({'background-position':'0 -1.2em'});
-        label.hide();
-        labelText.show();
-        label.css({'color':'#AED6F1'});
-        if($(this).val() == '') {
-            label.stop().animate({
-                'height':'1.7em',
-                'line-height':'1.7em',
-                'font-size':'0.6em'
-            });
-        } else {
-            label.css({
-                'height':'1.7em',
-                'line-height':'1.7em',
-                'font-size':'0.6em'
-            });
-        }
+        formItem.removeClass('validate-error');
+        formItem.removeClass('validate-ok');
+        label.removeClass('validate-error');
+        label.removeClass('validate-ok');
+
+        formItem.addClass('focus');
+        label.addClass('focus');
         spanErrorDescription.hide();
     });
 
     // Quando o input perder o (Focus)
-    $('.formItem').on("blur", function(){
-        var divItem = $(this).parent();
-        var inputIcon = $(this).parent().children('.spanInputIcon');
+    $('.form-item').on("blur", function(){
         var formItem = $(this);
-        var label = $(this).parent().children('.labelText:not(.labelFileNameFile)');
-        var labelValidateOk = $(this).parent().children('.labelValidateJsOk');
-        var labelValidateError = $(this).parent().children('.labelValidateJsError');
-        var spanErrorDescription = $(this).parent().children('.spanErrorDescription');
-        var id = this.id; // Como se pega o id
+        var label = $(this).parent().children('label');
+        var spanErrorDescription = $(this).parent().children('.span-error-description');
 
         if (formItem.val() != '') {
-            divItem.css({'border':'0.050em solid #009c41'}); // Verde
-            inputIcon.css({'background-position':'0 -2.4em'});
-            label.hide();
-            labelValidateError.hide();
+            formItem.addClass('validate-ok');
+            label.addClass('validate-ok');
             spanErrorDescription.hide();
-            labelValidateOk.css({'color':'#009c41'});
-            labelValidateOk.show();
         } else {
-            divItem.css({'border':'0.050em solid #cccccc'}); // Cinza
-            inputIcon.css({'background-position':'0 0'});
-            labelValidateOk.hide();
-            labelValidateError.hide();
-            
-            label.css({'color':'#cccccc'});
-            label.show();
-            label.stop().animate({
-                'height':'2.8em',
-                'line-height':'2.8em',
-                'font-size':'1em'
-            });
+            formItem.removeClass('focus');
+            label.removeClass('focus');
             spanErrorDescription.hide();
         }
 
-        if (formItem.hasClass('formEmail')) {
+        if (formItem.hasClass('email')) {
             if($(this).val() != '') {
                 var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
                 if(!emailReg.test(formItem.val())){
-                    divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                    inputIcon.css({'background-position':'0 -3.6em'});
-                    label.hide();
-                    labelValidateOk.hide();
-                    labelValidateError.css({'color':'#E74C3C'});
-                    labelValidateError.show();
+                    formItem.removeClass('focus');
+                    formItem.removeClass('validate-ok');
+                    label.removeClass('validate-ok');
+
+                    formItem.addClass('validate-error');
+                    label.addClass('validate-error');
                     spanErrorDescription.show().html("Formato de e-mail incorreto!");
                 } else {
-                    divItem.css({'border':'0.050em solid #009c41'}); // Verde
-                    inputIcon.css({'background-position':'0 -2.4em'});
-                    label.hide();
-                    labelValidateError.hide();
+                    formItem.removeClass('focus');
+                    label.removeClass('validate-error');
+
+                    formItem.addClass('validate-ok');
+                    label.addClass('validate-ok');
                     spanErrorDescription.hide();
-                    labelValidateOk.css({'color':'#009c41'});
-                    labelValidateOk.show();
                 }
             } else {
-                divItem.css({'border':'0.050em solid #cccccc'}); // Cinza
-                inputIcon.css({'background-position':'0 0'});
-                labelValidateOk.hide();
-                labelValidateError.hide();
+                formItem.removeClass('validate-error');
+                label.removeClass('validate-error');
                 spanErrorDescription.hide();
-                label.css({'color':'#cccccc'});
-                label.show();
             }
         }
 
@@ -373,7 +332,8 @@ $(function(){
     });
 
     // Eventos que ocorrerão após o clique no botão de submit.
-    $(".inputSubmit").click(function() {
+    $(".input-submit").click(function(e) {
+        e.preventDefault();
         var form = $(this).parent().parent("form");
         var formItem = $(this).parent().parent().children().children(".formItem");
 

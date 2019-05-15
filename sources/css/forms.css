@@ -25,62 +25,136 @@ input[type=file] {
 }
 
 /* Form containers */
-.formContainerNormal {
-    width: 100%;
+.form-container-normal {
+    background: rgb(255, 255, 255);
+    margin: 3em auto;
+	padding: 3em;
+    width: 30em;
+}
+
+.form-container-login {
+	background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	padding: 3em;
+    width: 25em;
 }
 
 /* Forms */
-form {
+.form-container form {
     width: 100%;
 }
 
 /* Div Itens */
-.divItem {
-    background: rgb(255, 255, 255);
+.form-container .div-item {
     position: relative;
-    margin-bottom: 1.1em;
+    margin-bottom: 1.5em;
     width: 100%;
     height: 3em;
-    border-radius: 0.150em;
     float: left;
     z-index: 1;
 }
 
-.divItemTextArea {
+.form-container .div-item-left {
+    width: calc(50% - 0.25em);
+}
+
+.form-container .div-item-right {
+    width: calc(50% - 0.25em);
+    float: right;
+}
+
+.form-container .div-item-text-area {
     height: 6em;
 }
 
-.divItemSubmit {
-	background: none;
+.form-container .div-item-submit {
+    background: none;
+    margin-top: 1em;
     margin-bottom: 0;
-    border: 0;
-}
-
-.inputSubmit {
-	padding: 0;
-    width: 100%;
     height: 3em;
-    line-height: 3em;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    font-weight: 700;
-    border-radius: 1.5em;
+    border: 0;
 }
 
 /* Inputs, Selects, Textareas, Buttons */
-input, select, textarea, button {
+.form-container .form-item {
     background: none;
     position: absolute;
-    padding: 0.6em 0.7em 0;
+    bottom: 0;
+    padding: 0.7em 1em 0;
     width: 100%;
-    height: 100%;
-    line-height: 2.8em;
-    color: rgb(28, 37, 65);
-    outline: none;
-    border: 0;
-    border-radius: 0.150em;
+    height: 3em;
+    line-height: 3em;
+    border: 0.050em solid #ccc;
+    border-radius: 0.250em;
     box-shadow: none;
     z-index: 1;
+}
+
+.form-container .form-item.focus {
+    border-color: blue;
+    border-width: 0.100em;
+}
+
+.form-container .form-item.validate-error {
+    border-color: red;
+}
+
+.form-container .form-item.validate-ok {
+    border-color: green;
+}
+
+/* Labels */
+.form-container .label {
+    transition: top ease 0.5s;
+    background: #fff;
+    position: absolute;
+    margin-left: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 0.5em;
+    height: 1em;
+    line-height: 1em;
+    color: #cccccc; /* Cinza claro */
+    font-weight: 700;
+    cursor: text;
+    z-index: 1;
+}
+
+.form-container .label.focus {
+    top: 0;
+    color: blue;
+}
+
+.form-container .label.validate-error {
+    color: red;
+}
+
+.form-container .label.validate-ok {
+    color: green;
+}
+
+.form-container .span-error-description {
+    display: none;
+    position: absolute;
+    bottom: -1.6em;
+    left: 0;
+    padding: 0 0.8em;
+    height: 1.7em;
+    line-height: 1.7em;
+    font-size: 0.6em;
+    font-weight: 400;
+    color: red;
+    cursor: text;
+}
+
+select {
+    background: url('form_images/selectSeta.svg') no-repeat 98% 50%;
+    background-size: 1.5em;
+    cursor: pointer;
+    padding: 0 0.5em;
 }
 
 textarea {
@@ -92,26 +166,29 @@ textarea {
 }
 
 
-/* Labels */
-label {
+/* Spans */
+span.inputFileMaskIcon {
+    background: url('form_images/fileUpload.svg') no-repeat 98% 50%;
+    background-size: 1.5em;
     position: absolute;
     top: 0;
-    padding: 0 0.8em;
     width: 100%;
     height: 100%;
-    line-height: 2.8em;
-    color: #cccccc; /* Cinza claro */
-    font-weight: 700;
-    cursor: text;
+}
+
+span.spanShowPassword {
+    background: url('form_images/showPassword.svg');
+    background-position: 0 0;
+    position: absolute;
+    display: block;
+    top: 0.9em;
+    right: 0.6em;
+    width: 1.2em;
+    height: 1.2em;
+    cursor: pointer;
     z-index: 1;
 }
 
-label.labelTextCenter {
-    width: 100%;
-    text-align: center;
-}
-
-/* Spans */
 .labelValidateJsOk, .labelValidateJsError {
     display: none;
 }
@@ -124,20 +201,6 @@ label.labelTextCenter {
 	color: #E74C3C; /* Vermelho */
 }
 
-.spanErrorDescription {
-    display: none;
-    position: absolute;
-    bottom: -1.6em;
-    left: 0;
-    padding: 0 0.8em;
-    height: 1.7em;
-    line-height: 1.7em;
-    font-size: 0.6em;
-    font-weight: 400;
-    color: #E74C3C;
-    cursor: text;
-}
-
 .symbolValidateJsOk, .symbolValidateJsError {
     margin-left: 0.5em;
 }
@@ -148,4 +211,27 @@ label.labelTextCenter {
 
 .symbolValidateJsError {
     color: #E74C3C; /* Vermelho */
+}
+
+/* Formulário de Login */
+.spanInputIcon {
+    position: absolute;
+    top: 0.9em;
+    left: 0.7em;
+    width: 1.2em;
+    height: 1.2em;
+    z-index: 2;
+}
+
+#spanInputIconUser {
+    background: url('form_images/user.svg');
+}
+
+#spanInputIconPassword {
+    background: url('form_images/password.svg');
+}
+
+input.user, input.password {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
 }

@@ -37,116 +37,26 @@
 	</head>
 
 	<body>
-		<div class="formContainerNormal clearFix">
+		<div class="form-container form-container-normal clearFix">
 			<form class="clearFix" method="post" action="functions_php/file_upload_test.php" enctype="multipart/form-data">
-				<div class="divItem">
-					<input id="inputNome" class="formItem required noValidate" type="text" name="nome">
-					<label id="labelNome" class="labelText" for="inputNome">Nome</label>
+				<div class="div-item">
+					<input id="input-nome" class="form-item required no-validate" type="text" name="nome">
+					<label id="label-nome" for="input-nome" class="label">Nome</label>
 
-					<label class="labelValidateJsOk">Nome<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">Nome<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-				</div><!-- .formItem -->
+					<span class="span-error-description"></span>
+				</div><!--div.div-item-->
 
-				<div class="divItem">
-					<input id="inputEmail" class="formItem formEmail required noValidate" type="email" name="email">
-					<label id="labelEmail" class="labelText" for="inputEmail">E-mail</label>
+				<div class="div-item">
+					<input id="input-email" class="form-item email required no-validate" type="email" name="email">
+					<label id="label-email" for="input-email" class="label">E-mail</label>
 
-					<label class="labelValidateJsOk">E-mail<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">E-mail<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-				</div><!-- .formItem -->
+					<span class="span-error-description"></span>
+				</div><!--div.div-item-->
 
-				<div class="divItem">
-					<input id="inputCep" class="formItem formCep cep required noValidate" type="text" name="cep">
-					<label id="labelCep" class="labelText" for="inputCep">CEP</label>
-
-					<label class="labelValidateJsOk">CEP<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">CEP<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-				</div><!-- .formItem -->
-
-				<div class="divItem divItemLeft">
-					<input id="inputTelefone" class="formItem textCenter tel telCel required noValidate" type="tel" name="telefone">
-					<label id="labelTelefone" class="labelText" for="inputTelefone">Telefone</label>
-
-					<label class="labelValidateJsOk">Telefone<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">Telefone<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-				</div><!-- .formItem -->
-
-				<div class="divItem divItemRight">
-					<input id="inputNumero" class="formItem textCenter numberM10M100 required noValidate" type="number" name="numero">
-					<label id="labelNumero" class="labelText" for="inputNumero">Número</label>
-
-					<label class="labelValidateJsOk">Número<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">Número<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-				</div><!-- .formItem -->
-
-				<div class="divItem">
-					<input id="inputFile" class="formItem formFile required noValidate" type="file" name="file">
-					<span class="inputFileMaskIcon"></span>
-					<label id="labelFile" class="labelText labelFile" for="inputFile">Arquivo</label>
-					<label class="labelText labelFileNameFile" for="inputFile"></label>
-
-					<label class="labelValidateJsOk">Arquivo<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">Arquivo<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-				</div><!-- .formItem -->
-
-				<div class="divItem">
-					<input id="inputFile2" class="formItem formFile required noValidate" type="file" name="file2">
-					<span class="inputFileMaskIcon"></span>
-					<label id="labelFile2" class="labelText labelFile" for="inputFile2">Arquivo</label>
-					<label class="labelText labelFileNameFile" for="inputFile2"></label>
-
-					<label class="labelValidateJsOk">Arquivo<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">Arquivo<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-				</div><!-- .formItem -->
-
-				<div class="divItem">
-					<label class="labelValidateJsOk">Selecione<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">Selecione<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-
-					<label id="labelSelect" class="labelText" for="select">Selecione</label>
-					<select id="select" class="formItem textCenter required noValidate" name="select">
-						<option value=""></option>
-						<option value="1">Opção 1</option>
-						<option value="2">Opção 2</option>
-						<option value="3">Opção 3</option>
-					</select>
-				</div><!-- .formItem -->
-
-				<div class="divItem">
-					<label class="labelValidateJsOk">Selecione<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">Selecione<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-
-					<label id="labelSelect" class="labelText" for="select2">Selecione</label>
-					<select id="select2" class="formItem textCenter required noValidate" name="select">
-						<option value=""></option>
-						<option value="1">Opção 1</option>
-						<option value="2">Opção 2</option>
-						<option value="3">Opção 3</option>
-					</select>
-				</div><!-- .formItem -->
-
-				<div class="divItem divItemTextArea">
-					<textarea id="textArea" class="formItem required noValidate" name="texto"></textarea>
-					<label id="labelTextArea" class="labelText" for="textArea">Texto</label>
-
-					<label class="labelValidateJsOk">Texto<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError">Texto<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-				</div><!-- .formItem -->
-
-				<div class="divItem divItemSubmit">
-					<input class="inputSubmit" type="button" value="Cadastrar">
-				</div><!-- .formItem -->
+				<div class="div-item div-item-submit">
+					<input class="input-submit button button-blue" type="submit" value="Cadastrar">
+				</div><!--div.div-item-->
 			</form>
-		</div><!-- div.formContainer -->
+		</div><!--div.form-container-normal-->
 	</body>
 </html>
