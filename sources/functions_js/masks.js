@@ -8,8 +8,8 @@ $(function(){
     // PADRÃO CRIADO PARA AS MÁSCARAS
     $('.date').mask('00/00/0000');
     $('.cep').mask('00000-000');
-    $('.telFixo').mask('(00) 0000-0000');
-    $('.telCel').mask('(00) 00000-0000');
+    $('.tel-fixo').mask('(00) 0000-0000');
+    $('.tel-cel').mask('(00) 00000-0000');
     $('.rg').mask('00.000.000-X', {'translation': { X: { pattern: /[0-9X-x]/}}});
     $('.cpf').mask('000.000.000-00');
     $('.id11').mask('00000000000');
