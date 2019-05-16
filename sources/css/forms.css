@@ -71,10 +71,7 @@ input[type=file] {
 }
 
 .form-container .div-item-submit {
-    background: none;
     margin-bottom: 0;
-    height: 3em;
-    border: 0;
 }
 
 /* Inputs, Selects, Textareas, Buttons */
@@ -193,6 +190,10 @@ span.inputFileMaskIcon {
 }
 
 /* Formulário de Login */
+.form-container-login .div-item-submit .input-submit {
+    width: 100%;
+}
+
 .spanInputIcon {
     position: absolute;
     top: 0.9em;
@@ -208,9 +209,4 @@ span.inputFileMaskIcon {
 
 #spanInputIconPassword {
     background: url('form_images/password.svg');
-}
-
-input.user, input.password {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
 }
