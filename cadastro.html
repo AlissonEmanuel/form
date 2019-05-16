@@ -41,35 +41,35 @@
 			<form class="clearFix" method="post" action="functions_php/file_upload_test.php" enctype="multipart/form-data">
 				<div class="div-item">
 					<input id="input-nome" class="form-item required no-validate" type="text" name="nome">
-					<label id="label-nome" for="input-nome" class="label">Nome</label>
+					<label id="label-nome" for="input-nome">Nome</label>
 
 					<span class="error-description"></span>
 				</div><!--div.div-item-->
 
 				<div class="div-item">
 					<input id="input-email" class="form-item email required no-validate" type="email" name="email">
-					<label id="label-email" for="input-email" class="label">E-mail</label>
+					<label id="label-email" for="input-email">E-mail</label>
 
 					<span class="error-description"></span>
 				</div><!--div.div-item-->
 
 				<div class="div-item">
 					<input id="input-cep" class="form-item cep required no-validate" type="text" name="cep">
-					<label id="label-cep" for="input-cep" class="label">CEP</label>
+					<label id="label-cep" for="input-cep">CEP</label>
 
 					<span class="error-description"></span>
 				</div><!--div.div-item-->
 
 				<div class="div-item">
 					<input id="input-date" class="form-item date required no-validate" type="text" name="date">
-					<label id="label-date" for="input-date" class="label">Data</label>
+					<label id="label-date" for="input-date">Data</label>
 
 					<span class="error-description"></span>
 				</div><!--div.div-item-->
 
 				<div class="div-item">
 					<input id="input-password" class="form-item password required no-validate" type="password" name="password">
-					<label id="label-password" for="input-password" class="label">Senha</label>
+					<label id="label-password" for="input-password">Senha</label>
 
 					<span class="error-description"></span>
 					<span class="show-password"></span>
@@ -77,21 +77,40 @@
 
 				<div class="div-item">
 					<input id="input-cpf" class="form-item cpf required no-validate" type="text" name="cpf">
-					<label id="label-cpf" for="input-cpf" class="label">CPF</label>
+					<label id="label-cpf" for="input-cpf">CPF</label>
 
 					<span class="error-description"></span>
 				</div><!--div.div-item-->
 
 				<div class="div-item">
 					<input id="input-tel-cel" class="form-item tel tel-cel required no-validate" type="text" name="telefone-celular">
-					<label id="label-tel-cel" for="input-tel-cel" class="label">Telefone celular</label>
+					<label id="label-tel-cel" for="input-tel-cel">Telefone celular</label>
 
 					<span class="error-description"></span>
 				</div><!--div.div-item-->
 
 				<div class="div-item">
 					<input id="input-tel-fixo" class="form-item tel tel-fixo required no-validate" type="text" name="telefone-fixo">
-					<label id="label-tel-fixo" for="input-tel-fixo" class="label">Telefone fixo</label>
+					<label id="label-tel-fixo" for="input-tel-fixo">Telefone fixo</label>
+
+					<span class="error-description"></span>
+				</div><!--div.div-item-->
+
+				<div class="div-item">
+					<select id="select" class="form-item form-item-select required no-validate" name="select">
+						<option value=""></option>
+						<option value="1">Opção 1</option>
+						<option value="2">Opção 2</option>
+						<option value="3">Opção 3</option>
+					</select>
+					<label id="label-select" for="select">Selecione</label>
+
+					<span class="error-description"></span>
+				</div><!--div.div-item-->
+
+				<div class="div-item div-item-text-area">
+					<textarea id="text-area" class="form-item form-item-text-area required no-validate" name="texto"></textarea>
+					<label id="label-text-area" for="text-area">Texto</label>
 
 					<span class="error-description"></span>
 				</div><!--div.div-item-->

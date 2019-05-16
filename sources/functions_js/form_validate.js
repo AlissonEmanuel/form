@@ -33,8 +33,10 @@ $(function(){
         } else {
             formItem.removeClass('focus');
             formItem.removeClass('validate-error');
+            formItem.removeClass('validate-ok');
             label.removeClass('focus');
             label.removeClass('validate-error');
+            label.removeClass('validate-ok');
             spanErrorDescription.hide();
         }
 

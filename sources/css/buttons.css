@@ -29,6 +29,10 @@
 	background: rgba(28, 37, 65, 1);
 }
 
-.button-green {}
+.button-green {
+	background: rgba(0, 204, 0, 0.8);
+}
 
-.button-green:hover {}
+.button-green:hover {
+	background: rgba(0, 204, 0, 1);
+}

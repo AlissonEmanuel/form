@@ -33,7 +33,7 @@ input[type=file] {
 }
 
 .form-container-login {
-	background: rgba(255, 255, 255, 0.7);
+	background: rgba(255, 255, 255);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -72,7 +72,6 @@ input[type=file] {
 
 .form-container .div-item-submit {
     background: none;
-    margin-top: 1em;
     margin-bottom: 0;
     height: 3em;
     border: 0;
@@ -107,7 +106,7 @@ input[type=file] {
 }
 
 /* Labels */
-.form-container .label {
+.form-container label {
     transition: top ease 0.5s;
     background: #fff;
     position: absolute;
@@ -123,16 +122,16 @@ input[type=file] {
     z-index: 1;
 }
 
-.form-container .label.focus {
+.form-container label.focus {
     top: 0;
     color: blue;
 }
 
-.form-container .label.validate-error {
+.form-container label.validate-error {
     color: red;
 }
 
-.form-container .label.validate-ok {
+.form-container label.validate-ok {
     color: green;
 }
 
@@ -167,14 +166,14 @@ input[type=file] {
     background-position: 0 1.2em;
 }
 
-select {
-    background: url('form_images/selectSeta.svg') no-repeat 98% 50%;
+.form-container select.form-item-select {
+    background: url('form_images/select_seta.svg') no-repeat 98% 50%;
     background-size: 1.5em;
     cursor: pointer;
     padding: 0 0.5em;
 }
 
-textarea {
+.form-container textarea.form-item-text-area {
     padding-top: 1.5em;
     padding-bottom: 1em;
     height: 100%;
@@ -191,30 +190,6 @@ span.inputFileMaskIcon {
     top: 0;
     width: 100%;
     height: 100%;
-}
-
-.labelValidateJsOk, .labelValidateJsError {
-    display: none;
-}
-
-.labelValidateJsOk {
-	color: #009c41; /* Verde */
-}
-
-.labelValidateJsError {
-	color: #E74C3C; /* Vermelho */
-}
-
-.symbolValidateJsOk, .symbolValidateJsError {
-    margin-left: 0.5em;
-}
-
-.symbolValidateJsOk {
-    color: #009c41; /* Verde */
-}
-
-.symbolValidateJsError {
-    color: #E74C3C; /* Vermelho */
 }
 
 /* Formulário de Login */

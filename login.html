@@ -7,61 +7,57 @@
         <!-- METATAG PARA FUNCIONAMENTO EM APARELHOS PORTÁTEIS -->
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
+		<!-- META TAGS REFERENTES AO AUTOR -->
+		<meta name="author" content="Marcelo Albuquerque">
+		<meta name="generator" content="Visual Studio Code">
+
+		<!-- META TAGS COM AS INFORMAÇÕES DE DIREITOS DO PROJETO -->
+		<meta name="copyright" content="© 2019 PRIDI Projetos. Todos os direitos reservados.">
+
 		<!-- FAVICON PARA A MAIORIA DOS NAVEGADORES E SUAS APLICAÇÕES -->
-		<link rel="icon" type="image/png" href="favicons/favicon_512x512.png" sizes="512x512">
+		<link rel="icon" type="image/png" href="sources/favicons/favicon_512x512.png" sizes="512x512">
 
-		<!-- FOLHAS DE ESTILO -->
-			<!-- ARQUIVO CSS QUE CARREGA TODAS AS FOLHAS DE ESTILO DO SITE -->
-			<link href="css/sheets.css" type="text/css" rel="stylesheet">
+		<!-- ARQUIVO CSS QUE CARREGA TODAS AS FOLHAS DE ESTILO DO SITE -->
+    	<link href="sources/css/sheets.css" type="text/css" rel="stylesheet">
 
-		<!-- BIBLIOTECAS JQUERY -->
-			<!-- PLUGIN JQUERY (3.2.1) -->
-    		<script src="libraries_js/jquery/jquery-3.2.1.min.js"></script>
+		<!-- BIBLIOTECA JQUERY -->
+    	<script src="sources/libraries_js/jquery/jquery-3.3.1.min.js"></script>
 
-            <!-- PLUGINS PARA CRIAR MÁSCARAS -->
-                <!-- JQUERY PLUGIN MASK (MÁSCARAS) -->
-                <script src="libraries_js/mask/jquery.mask.min.js"></script>
+		<!-- JQUERY PLUGIN MASK (MÁSCARAS) -->
+		<script src="sources/libraries_js/mask/jquery.mask.min.js"></script>
 
-                <!-- JQUERY PLUGIN MASKASNUMBER (MÁSCARAS DO TIPO NÚMERO) -->
-                <script src="libraries_js/mask_number/jquery.maskasnumber.js"></script>
+		<!-- CONFIGURAÇÕES PARA AS VALIDAÇÕES DO FORMULÁRIO -->
+		<script src="sources/functions_js/form_validate.js" type="text/javascript"></script>
 
-            <!-- CONFIGURAÇÕES PARA OS PLUGINS -->
-                <!-- CONFIGURAÇÕES PARA AS VALIDAÇÕES DO FORMULÁRIO -->
-                <script src="functions_js/formValidate.js" type="text/javascript"></script>
+		<!-- CONFIGURAÇÕES PARA AS MÁSCARAS (JQUERY PLUGIN MASK) -->
+		<script src="sources/functions_js/masks.js"></script>
 
-                <!-- CONFIGURAÇÕES PARA AS MÁSCARAS (PLUGIN MASK E PLUGIN MASKASNUMBER) -->
-                <script src="functions_js/masks.js"></script>
-
-        <!-- TÍTULO DO SITE -->
-		<title>Formulário de Login</title>
+        <!-- TÍTULO DA PÁGINA -->
+		<title>Formulário  de Cadastro</title>
 	</head>
 
 	<body>
-		<div class="formContainerLogin clearFix">
+		<div class="form-container form-container-login clearFix">
 			<form class="clearFix" method="post" action="" autocomplete="off">
-				<div class="divItem divItemUsuario">
-					<input id="inputUsuario" class="formItem required noValidate user textCenter" type="text" name="usuario">
-					<label id="labelUsuario" class="labelText labelTextCenter" for="inputUsuario">Usuário</label>
+				<div class="div-item div-item-usuario">
+					<input id="input-usuario" class="form-item required no-validate user" type="text" name="usuario">
+					<label id="label-usuario" for="input-usuario">Usuário</label>
 
-					<label class="labelValidateJsOk labelTextCenter">Usuário<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError labelTextCenter">Usuário<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-				</div><!-- .formItem -->
+					<span class="error-description"></span>
+				</div><!--div.div-item-->
 
-				<div class="divItem divItemSenha">
-					<input id="inputSenha" class="formItem required noValidate password textCenter" type="password" name="senha" maxlength="12">
-					<label id="labelSenha" class="labelText labelTextCenter" for="inputSenha">Senha</label>
+				<div class="div-item div-item-senha">
+					<input id="input-senha" class="form-item required no-validate password" type="password" name="senha" maxlength="12">
+					<label id="label-senha" for="input-senha">Senha</label>
 
-					<label class="labelValidateJsOk labelTextCenter">Senha<span class="symbolValidateJsOk">&#10004;</span></label>
-					<label class="labelValidateJsError labelTextCenter">Senha<span class="symbolValidateJsError">&#10006;</span></label>
-					<span class="spanErrorDescription"></span>
-					<span class="spanShowPassword"></span>
-				</div><!-- .formItem -->
+					<span class="error-description"></span>
+					<span class="show-password"></span>
+				</div><!--div.div-item-->
 
-				<div class="divItem divItemSubmit">
-					<input class="inputSubmit button buttonGreen" type="button" value="Login">
-				</div><!-- .formItem -->
+				<div class="div-item div-item-submit">
+					<input class="input-submit button button-green" type="submit" value="Login">
+				</div><!--div.div-item-->
 			</form>
-		</div><!-- div.formContainer -->
+		</div><!--div.form-container-->
 	</body>
 </html>
