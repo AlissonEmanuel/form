@@ -32,7 +32,9 @@ $(function(){
             spanErrorDescription.hide();
         } else {
             formItem.removeClass('focus');
+            formItem.removeClass('validate-error');
             label.removeClass('focus');
+            label.removeClass('validate-error');
             spanErrorDescription.hide();
         }
 
@@ -215,7 +217,7 @@ $(function(){
         }
     });
 
-    $('.labelFileNameFile').on("click", function(){
+    $('.label-file').on("click", function(){
         var formItem = $(this).parent().children('.formItem');
         var labelFile = $(this);
         var label = $(this).parent().children('.labelFile');
@@ -229,7 +231,7 @@ $(function(){
         formItem.val("");
     });
 
-    $('.formFile').on("change", function(){
+    $('.form-file').on("change", function(){
         var formItem = $(this);
         var label = $(this).parent().children('.labelFileNameFile');
         var nameFile = formItem.val().split('\\').pop();
@@ -299,7 +301,13 @@ $(function(){
 
                             $(this).focus(); // Importante ser primeiro
 
-                            //
+                            formItem.removeClass('focus');
+                            formItem.removeClass('validate-ok');
+                            label.removeClass('validate-ok');
+
+                            formItem.addClass('validate-error');
+                            label.addClass('validate-error');
+                            spanErrorDescription.show().html("Selecione um arquivo!");
 
                             return false;
                         } else {
@@ -348,10 +356,12 @@ $(function(){
                             if($(this).val().length < 9) {
                                 $(this).focus(); // Importante ser primeiro
 
-                                divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                inputIcon.css({'background-position':'0 -3.6em'});
-                                labelValidateError.css({'color':'#E74C3C'});
-                                labelValidateError.show();
+                                formItem.removeClass('focus');
+                                formItem.removeClass('validate-ok');
+                                label.removeClass('validate-ok');
+
+                                formItem.addClass('validate-error');
+                                label.addClass('validate-error');
                                 spanErrorDescription.show().html("Formato de CEP incorreto!");
 
                                 return false;
@@ -367,10 +377,12 @@ $(function(){
                             if($(this).val().length < 10) {
                                 $(this).focus(); // Importante ser primeiro
 
-                                divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                inputIcon.css({'background-position':'0 -3.6em'});
-                                labelValidateError.css({'color':'#E74C3C'});
-                                labelValidateError.show();
+                                formItem.removeClass('focus');
+                                formItem.removeClass('validate-ok');
+                                label.removeClass('validate-ok');
+
+                                formItem.addClass('validate-error');
+                                label.addClass('validate-error');
                                 spanErrorDescription.show().html("Formato de data incorreto!");
                                 
                                 return false;
@@ -386,10 +398,12 @@ $(function(){
                             if($(this).val().length < 6) {
                                 $(this).focus(); // Importante ser primeiro
 
-                                divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                inputIcon.css({'background-position':'0 -3.6em'});
-                                labelValidateError.css({'color':'#E74C3C'});
-                                labelValidateError.show();
+                                formItem.removeClass('focus');
+                                formItem.removeClass('validate-ok');
+                                label.removeClass('validate-ok');
+
+                                formItem.addClass('validate-error');
+                                label.addClass('validate-error');
                                 spanErrorDescription.show().html("Mínimo de 6 dígitos");
                                 
                                 return false;
@@ -405,10 +419,12 @@ $(function(){
                             if($(this).val().length < 14) {
                                 $(this).focus(); // Importante ser primeiro
 
-                                divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                inputIcon.css({'background-position':'0 -3.6em'});
-                                labelValidateError.css({'color':'#E74C3C'});
-                                labelValidateError.show();
+                                formItem.removeClass('focus');
+                                formItem.removeClass('validate-ok');
+                                label.removeClass('validate-ok');
+
+                                formItem.addClass('validate-error');
+                                label.addClass('validate-error');
                                 spanErrorDescription.show().html("Formato de CPF incorreto!");
                                 
                                 return false;
@@ -425,10 +441,12 @@ $(function(){
                                 if($(this).val().length < 15) {
                                     $(this).focus(); // Importante ser primeiro
 
-                                    divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                    inputIcon.css({'background-position':'0 -3.6em'});
-                                    labelValidateError.css({'color':'#E74C3C'});
-                                    labelValidateError.show();
+                                    formItem.removeClass('focus');
+                                    formItem.removeClass('validate-ok');
+                                    label.removeClass('validate-ok');
+
+                                    formItem.addClass('validate-error');
+                                    label.addClass('validate-error');
                                     spanErrorDescription.show().html("Formato de telefone incorreto!");
                                     
                                     return false;
@@ -444,10 +462,12 @@ $(function(){
                                 if($(this).val().length < 14) {
                                     $(this).focus(); // Importante ser primeiro
 
-                                    divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                    inputIcon.css({'background-position':'0 -3.6em'});
-                                    labelValidateError.css({'color':'#E74C3C'});
-                                    labelValidateError.show();
+                                    formItem.removeClass('focus');
+                                    formItem.removeClass('validate-ok');
+                                    label.removeClass('validate-ok');
+
+                                    formItem.addClass('validate-error');
+                                    label.addClass('validate-error');
                                     spanErrorDescription.show().html("Formato de telefone incorreto!");
                                     
                                     return false;
@@ -474,12 +494,12 @@ $(function(){
                                 $(this).addClass("no-validate");
                                 $(this).focus(); // Importante ser primeiro
 
-                                divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                inputIcon.css({'background-position':'0 -3.6em'});
-                                label.hide();
-                                labelValidateOk.hide();
-                                labelValidateError.css({'color':'#E74C3C'});
-                                labelValidateError.show();
+                                formItem.removeClass('focus');
+                                formItem.removeClass('validate-ok');
+                                label.removeClass('validate-ok');
+
+                                formItem.addClass('validate-error');
+                                label.addClass('validate-error');
                                 spanErrorDescription.show().html("Selecione um arquivo!");
                                 
                                 return false;
@@ -488,12 +508,12 @@ $(function(){
                                 $(this).addClass("no-validate");
                                 $(this).focus(); // Importante ser primeiro
 
-                                divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                inputIcon.css({'background-position':'0 -3.6em'});
-                                label.hide();
-                                labelValidateOk.hide();
-                                labelValidateError.css({'color':'#E74C3C'});
-                                labelValidateError.show();
+                                formItem.removeClass('focus');
+                                formItem.removeClass('validate-ok');
+                                label.removeClass('validate-ok');
+
+                                formItem.addClass('validate-error');
+                                label.addClass('validate-error');
                                 spanErrorDescription.show().html("Informação obrigatória!");
                                 
                                 return false;
@@ -508,12 +528,12 @@ $(function(){
                                     $(this).addClass("no-validate");
                                     $(this).focus(); // Importante ser primeiro
                                     
-                                    divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                    inputIcon.css({'background-position':'0 -3.6em'});
-                                    label.hide();
-                                    labelValidateOk.hide();
-                                    labelValidateError.css({'color':'#E74C3C'});
-                                    labelValidateError.show();
+                                    formItem.removeClass('focus');
+                                    formItem.removeClass('validate-ok');
+                                    label.removeClass('validate-ok');
+
+                                    formItem.addClass('validate-error');
+                                    label.addClass('validate-error');
                                     spanErrorDescription.show().html("Formato de e-mail incorreto!");
                                     
                                     return false;
@@ -531,12 +551,12 @@ $(function(){
                                     $(this).addClass("no-validate");
                                     $(this).focus(); // Importante ser primeiro
 
-                                    divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                    inputIcon.css({'background-position':'0 -3.6em'});
-                                    label.hide();
-                                    labelValidateOk.hide();
-                                    labelValidateError.css({'color':'#E74C3C'});
-                                    labelValidateError.show();
+                                    formItem.removeClass('focus');
+                                    formItem.removeClass('validate-ok');
+                                    label.removeClass('validate-ok');
+
+                                    formItem.addClass('validate-error');
+                                    label.addClass('validate-error');
                                     spanErrorDescription.show().html("Formato de CEP incorreto!");
                                     
                                     return false;
@@ -554,12 +574,12 @@ $(function(){
                                     $(this).addClass("no-validate");
                                     $(this).focus(); // Importante ser primeiro
 
-                                    divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                    inputIcon.css({'background-position':'0 -3.6em'});
-                                    label.hide();
-                                    labelValidateOk.hide();
-                                    labelValidateError.css({'color':'#E74C3C'});
-                                    labelValidateError.show();
+                                    formItem.removeClass('focus');
+                                    formItem.removeClass('validate-ok');
+                                    label.removeClass('validate-ok');
+
+                                    formItem.addClass('validate-error');
+                                    label.addClass('validate-error');
                                     spanErrorDescription.show().html("Formato de data incorreto!");
                                     
                                     return false;
@@ -577,12 +597,12 @@ $(function(){
                                     $(this).addClass("no-validate");
                                     $(this).focus(); // Importante ser primeiro
 
-                                    divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                    inputIcon.css({'background-position':'0 -3.6em'});
-                                    label.hide();
-                                    labelValidateOk.hide();
-                                    labelValidateError.css({'color':'#E74C3C'});
-                                    labelValidateError.show();
+                                    formItem.removeClass('focus');
+                                    formItem.removeClass('validate-ok');
+                                    label.removeClass('validate-ok');
+
+                                    formItem.addClass('validate-error');
+                                    label.addClass('validate-error');
                                     spanErrorDescription.show().html("Mínimo de 6 dígitos!");
                                     
                                     return false;
@@ -600,12 +620,12 @@ $(function(){
                                     $(this).addClass("no-validate");
                                     $(this).focus(); // Importante ser primeiro
 
-                                    divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                    inputIcon.css({'background-position':'0 -3.6em'});
-                                    label.hide();
-                                    labelValidateOk.hide();
-                                    labelValidateError.css({'color':'#E74C3C'});
-                                    labelValidateError.show();
+                                    formItem.removeClass('focus');
+                                    formItem.removeClass('validate-ok');
+                                    label.removeClass('validate-ok');
+
+                                    formItem.addClass('validate-error');
+                                    label.addClass('validate-error');
                                     spanErrorDescription.show().html("Formato de CPF incorreto!");
                                     
                                     return false;
@@ -624,12 +644,12 @@ $(function(){
                                         $(this).addClass("no-validate");
                                         $(this).focus(); // Importante ser primeiro
 
-                                        divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                        inputIcon.css({'background-position':'0 -3.6em'});
-                                        label.hide();
-                                        labelValidateOk.hide();
-                                        labelValidateError.css({'color':'#E74C3C'});
-                                        labelValidateError.show();
+                                        formItem.removeClass('focus');
+                                        formItem.removeClass('validate-ok');
+                                        label.removeClass('validate-ok');
+
+                                        formItem.addClass('validate-error');
+                                        label.addClass('validate-error');
                                         spanErrorDescription.show().html("Formato de telefone incorreto!");
                                         
                                         return false;
@@ -647,12 +667,12 @@ $(function(){
                                         $(this).addClass("no-validate");
                                         $(this).focus(); // Importante ser primeiro
 
-                                        divItem.css({'border':'0.050em solid #E74C3C'}); // Vermelho
-                                        inputIcon.css({'background-position':'0 -3.6em'});
-                                        label.hide();
-                                        labelValidateOk.hide();
-                                        labelValidateError.css({'color':'#E74C3C'});
-                                        labelValidateError.show();
+                                        formItem.removeClass('focus');
+                                        formItem.removeClass('validate-ok');
+                                        label.removeClass('validate-ok');
+
+                                        formItem.addClass('validate-error');
+                                        label.addClass('validate-error');
                                         spanErrorDescription.show().html("Formato de telefone incorreto!");
                                         
                                         return false;
@@ -672,13 +692,10 @@ $(function(){
         });
 
         if(form.find(".no-validate").length) {
-            // Return false
+            return false;
         } else {
             // Submit Form
             form.submit();
         }
     });
-    
-    // Ao carregar, o campo usuário recebe o (Focus)
-    //$('.user').focus();
 });
