@@ -85,6 +85,7 @@ input[type=file] {
     line-height: 3em;
     border: 0.050em solid #ccc;
     border-radius: 0.250em;
+    outline: none;
     box-shadow: none;
     z-index: 1;
 }
