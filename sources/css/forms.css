@@ -50,7 +50,7 @@ input[type=file] {
 /* Div Itens */
 .form-container .div-item {
     position: relative;
-    margin-bottom: 1.8em;
+    margin-bottom: 1.5em;
     width: 100%;
     height: 3em;
     float: left;
@@ -136,12 +136,12 @@ input[type=file] {
 .form-container .error-description {
     display: none;
     position: absolute;
-    top: 0;
+    bottom: -1.6em;
     left: 0;
-    padding: 0 1.7em;
+    padding: 0 0.8em;
     height: 1.7em;
     line-height: 1.7em;
-    font-size: 0.6em; /* Afeta as outras medidas */
+    font-size: 0.6em;
     font-weight: 400;
     color: red;
     cursor: text;
