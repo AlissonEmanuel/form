@@ -215,6 +215,29 @@ $(function(){
                     label.removeClass('validate-error');
                     spanErrorDescription.hide();
                 }
+            } else {
+                if($(this).val() != '') {
+                    if($(this).val().length < 14) {
+                        formItem.removeClass('focus');
+                        formItem.removeClass('validate-ok');
+                        label.removeClass('validate-ok');
+
+                        formItem.addClass('validate-error');
+                        label.addClass('validate-error');
+                        spanErrorDescription.show().html("Formato de telefone incorreto!");
+                    } else {
+                        formItem.removeClass('focus');
+                        label.removeClass('validate-error');
+
+                        formItem.addClass('validate-ok');
+                        label.addClass('validate-ok');
+                        spanErrorDescription.hide();
+                    }
+                } else {
+                    formItem.removeClass('validate-error');
+                    label.removeClass('validate-error');
+                    spanErrorDescription.hide();
+                }
             }
         }
     });
@@ -437,7 +460,7 @@ $(function(){
                         }
                     }
 
-                    else if ($(this).hasClass('tel')) {
+                    if ($(this).hasClass('tel')) {
                         if ($(this).hasClass('tel-cel')) {
                             if($(this).val() != '') {
                                 if($(this).val().length < 15) {
@@ -459,7 +482,26 @@ $(function(){
                             }
                         }
 
-                    else if ($(this).hasClass('tel-fixo')) {
+                        if ($(this).hasClass('tel-fixo')) {
+                            if($(this).val() != '') {
+                                if($(this).val().length < 14) {
+                                    $(this).focus(); // Importante ser primeiro
+
+                                    formItem.removeClass('focus');
+                                    formItem.removeClass('validate-ok');
+                                    label.removeClass('validate-ok');
+
+                                    formItem.addClass('validate-error');
+                                    label.addClass('validate-error');
+                                    spanErrorDescription.show().html("Formato de telefone incorreto!");
+                                    
+                                    return false;
+                                } else {
+                                    $(this).removeClass("no-validate");
+                                    $(this).addClass("yes-validate");
+                                }
+                            }
+                        } else {
                             if($(this).val() != '') {
                                 if($(this).val().length < 14) {
                                     $(this).focus(); // Importante ser primeiro
@@ -638,7 +680,7 @@ $(function(){
                             }
                         }
 
-                        else if ($(this).hasClass('tel')) {
+                        if ($(this).hasClass('tel')) {
                             if ($(this).hasClass('tel-cel')) {
                                 if($(this).val() != '') {
                                     if($(this).val().length < 15) {
@@ -662,7 +704,28 @@ $(function(){
                                 }
                             }
 
-                        else if ($(this).hasClass('tel-fixo')) {
+                            if ($(this).hasClass('tel-fixo')) {
+                                if($(this).val() != '') {
+                                    if($(this).val().length < 14) {
+                                        $(this).removeClass("yes-validate");
+                                        $(this).addClass("no-validate");
+                                        $(this).focus(); // Importante ser primeiro
+
+                                        formItem.removeClass('focus');
+                                        formItem.removeClass('validate-ok');
+                                        label.removeClass('validate-ok');
+
+                                        formItem.addClass('validate-error');
+                                        label.addClass('validate-error');
+                                        spanErrorDescription.show().html("Formato de telefone incorreto!");
+                                        
+                                        return false;
+                                    } else {
+                                        $(this).removeClass("no-validate");
+                                        $(this).addClass("yes-validate");
+                                    }
+                                }
+                            } else {
                                 if($(this).val() != '') {
                                     if($(this).val().length < 14) {
                                         $(this).removeClass("yes-validate");
