@@ -24,58 +24,46 @@ input[type=file] {
     box-shadow: none;
 }
 
-/* Form containers */
-.form-container-normal {
-    background: rgb(255, 255, 255);
+/* Containers */
+div.form-container {
+    background: #ffffff;
     margin: 3em auto;
 	padding: 3em;
-    width: 30em;
+    max-width: 30em;
+    box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.2);
 }
 
-.form-container-login {
-	background: rgba(255, 255, 255);
+div.form-container.login {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-	padding: 3em;
     width: 25em;
 }
 
 /* Forms */
-.form-container form {
+form {
     width: 100%;
 }
 
 /* Div Itens */
-.form-container .div-item {
+form div {
     position: relative;
     margin-bottom: 1.5em;
     width: 100%;
     height: 3em;
-    float: left;
-    z-index: 1;
 }
 
-.form-container .div-item-left {
-    width: calc(50% - 0.25em);
-}
-
-.form-container .div-item-right {
-    width: calc(50% - 0.25em);
-    float: right;
-}
-
-.form-container .div-item-text-area {
-    height: 6em;
-}
-
-.form-container .div-item-submit {
+form div:last-child  {
     margin-bottom: 0;
 }
 
+form div.textarea {
+    height: 6em;
+}
+
 /* Inputs, Selects, Textareas, Buttons */
-.form-container .form-item {
+form .form-item {
     background: none;
     position: absolute;
     bottom: 0;
@@ -87,26 +75,25 @@ input[type=file] {
     border-radius: 0.250em;
     outline: none;
     box-shadow: none;
-    z-index: 1;
 }
 
-.form-container .form-item.focus {
+form .form-item.focus {
     border-color: blue;
     border-width: 0.100em;
 }
 
-.form-container .form-item.validate-error {
+form .form-item.validate-error {
     border-color: red;
 }
 
-.form-container .form-item.validate-ok {
+form .form-item.validate-ok {
     border-color: green;
 }
 
 /* Labels */
-.form-container label {
+form label {
     transition: top ease 0.5s;
-    background: #fff;
+    background: #ffffff;
     position: absolute;
     margin-left: 0.5em;
     top: 50%;
@@ -117,23 +104,22 @@ input[type=file] {
     color: #cccccc; /* Cinza claro */
     font-weight: 700;
     cursor: text;
-    z-index: 1;
 }
 
-.form-container label.focus {
+form label.focus {
     top: 0;
     color: blue;
 }
 
-.form-container label.validate-error {
+form label.validate-error {
     color: red;
 }
 
-.form-container label.validate-ok {
+form label.validate-ok {
     color: green;
 }
 
-.form-container .error-description {
+form span.error-description {
     display: none;
     position: absolute;
     bottom: -1.6em;
@@ -147,8 +133,8 @@ input[type=file] {
     cursor: text;
 }
 
-.form-container .show-password {
-    background: url('form_images/show_password.svg');
+form span.show-password {
+    background: url('../images/form_images/show_password.svg');
     background-position: 0 0;
     position: absolute;
     display: block;
@@ -157,21 +143,20 @@ input[type=file] {
     width: 1.2em;
     height: 1.2em;
     cursor: pointer;
-    z-index: 1;
 }
 
-.form-container .show-password.show {
+form span.show-password.show {
     background-position: 0 1.2em;
 }
 
-.form-container select.form-item-select {
-    background: url('form_images/select_seta.svg') no-repeat 98% 50%;
+form select.form-item {
+    background: url('../images/form_images/select_seta.svg') no-repeat 98% 50%;
     background-size: 1.5em;
     cursor: pointer;
     padding: 0 0.5em;
 }
 
-.form-container textarea.form-item-text-area {
+form textarea.form-item {
     padding-top: 1.5em;
     padding-bottom: 1em;
     height: 100%;
@@ -179,35 +164,7 @@ input[type=file] {
     resize: none;
 }
 
-
-/* Spans */
-span.inputFileMaskIcon {
-    background: url('form_images/fileUpload.svg') no-repeat 98% 50%;
-    background-size: 1.5em;
-    position: absolute;
-    top: 0;
+/* LOGIN */
+div.form-container.login input[type=submit]{
     width: 100%;
-    height: 100%;
-}
-
-/* Formulário de Login */
-.form-container-login .div-item-submit .input-submit {
-    width: 100%;
-}
-
-.spanInputIcon {
-    position: absolute;
-    top: 0.9em;
-    left: 0.7em;
-    width: 1.2em;
-    height: 1.2em;
-    z-index: 2;
-}
-
-#spanInputIconUser {
-    background: url('form_images/user.svg');
-}
-
-#spanInputIconPassword {
-    background: url('form_images/password.svg');
 }

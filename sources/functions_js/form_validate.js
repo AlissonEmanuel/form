@@ -1,7 +1,4 @@
 $(function(){
-    // Ao carregar, todos os valores serão zerados
-    //$('.formItem').val('');
-
     // Quando o input estiver ativo (Focus)
     $('.form-item').on("focus", function(){
         var formItem = $(this);
@@ -308,7 +305,7 @@ $(function(){
     });
 
     // Eventos que ocorrerão após o clique no botão de submit.
-    $(".input-submit").click(function(e) {
+    $('input[type=submit]').click(function(e) {
         e.preventDefault();
         var form = $(this).parent().parent("form");
         var formItem = $(this).parent().parent().children().children(".form-item");

@@ -1,7 +1,11 @@
-/* Estilos básicos */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 html {
     font-size: 125.0%;
-    scroll-behavior: smooth;
 }
 
 body, input, select, textarea, button {

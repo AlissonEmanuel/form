@@ -1,33 +1,5 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
-/* Ajustes pessoais
-   ========================================================================== */
-/**
-* 1. Define (margin) e (padding) com valor 0
-* 2. (box-sizing), usada para calcular corretamente larguras (widths) e alturas (heights)
-*/
-
-*, *:before, *:after {
-    margin: 0; /* 1 */
-    padding: 0; /* 1 */
-    -webkit-box-sizing: border-box; /* 2 */
-    -moz-box-sizing: border-box; /* 2 */
-    box-sizing: border-box; /* 2 */
-}
-
-/**
-* Ajusta o posicionamento de blocos dentro de outros blocos
-*/
-
-.clearFix:before, .clearFix:after {
-    content: "";
-    display: table;
-}
-
-.clearFix:after {
-    clear: both;
-}
-
 /* Document
    ========================================================================== */
 
