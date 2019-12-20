@@ -13,14 +13,4 @@ $(function(){
     $('.tel').mask('(00) 0000-00000');
     $('.rg').mask('00.000.000-X', {'translation': { X: { pattern: /[0-9X-x]/}}});
     $('.cpf').mask('000.000.000-00');
-    $('.id11').mask('00000000000');
-
-    // 1. FUNÇÃO QUE CRIA MÁSCARAS PARA OS INPUTS ESPECIFICAMENTE PARA NÚMEROS
-    // 2. NECESSITA DO PLUGIN "jQuery"
-    // 2.1. ARQUIVO "jquery-1.12.2.min.js"
-    // 3. FUNCIONA JUNTO AO SCRIPT "* MaskAsNumber Jquery Plugin v1.0"
-    // 3.1. ARQUIVO "jquery.maskasnumber.js"
-
-    // MÁSCARAS PARA NÚMEROS
-    $('.numberM10M100').maskAsNumber({min: 10, max: 100});
 });

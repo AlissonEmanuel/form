@@ -305,7 +305,7 @@ $(function(){
     });
 
     // Eventos que ocorrerão após o clique no botão de submit.
-    $('input[type=submit]').click(function(e) {
+    $('input[type=submit]').on('click', function(e) {
         e.preventDefault();
         var form = $(this).parent().parent("form");
         var formItem = $(this).parent().parent().children().children(".form-item");
